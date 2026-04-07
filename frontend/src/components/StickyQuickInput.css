@@ -1,0 +1,104 @@
+.sticky-quick-input {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  padding: 1rem 1.5rem 1.25rem;
+  background: transparent;
+}
+
+.sticky-card {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #20252d;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.sticky-card label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: var(--font-mono);
+}
+
+.sticky-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.sticky-row input {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.sticky-row input::placeholder {
+  color: #374151;
+}
+
+.sticky-row input:focus {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.sticky-row button {
+  min-width: 10rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  padding: 0.9rem 1rem;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  letter-spacing: 0.01em;
+  transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+}
+
+.sticky-row button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37,99,235,0.45);
+}
+
+.sticky-row button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.sticky-row button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 700px) {
+  .sticky-row {
+    flex-direction: column;
+  }
+
+  .sticky-row button {
+    width: 100%;
+  }
+}

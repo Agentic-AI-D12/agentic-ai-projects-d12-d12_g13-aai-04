@@ -1,0 +1,107 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.top-bar {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-new-guide {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text);
+  border-radius: 9px;
+  padding: 0.65rem 1rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.header-new-guide:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-1px);
+}
+
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 1;
+}
+
+.orb-1 {
+  width: 600px; height: 600px;
+  top: -200px; left: -200px;
+  background: var(--orb1);
+  animation: drift1 18s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  width: 500px; height: 500px;
+  top: 20%; right: -150px;
+  background: var(--orb2);
+  animation: drift2 22s ease-in-out infinite alternate;
+}
+
+.orb-3 {
+  width: 400px; height: 400px;
+  bottom: -100px; left: 40%;
+  background: var(--orb3);
+  animation: drift3 15s ease-in-out infinite alternate;
+}
+
+@keyframes drift1 { from { transform: translate(0,0); } to { transform: translate(80px, 60px); } }
+@keyframes drift2 { from { transform: translate(0,0); } to { transform: translate(-60px, 80px); } }
+@keyframes drift3 { from { transform: translate(0,0); } to { transform: translate(40px, -50px); } }
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem 12rem;
+}
+
+/* Error box */
+.error-box {
+  margin: 2rem 0;
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error-box .error-icon { font-size: 1.4rem; }
+.error-box p { flex: 1; color: #fca5a5; font-size: 0.95rem; }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(239,68,68,0.4);
+  color: #fca5a5;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { background: rgba(239,68,68,0.1); }

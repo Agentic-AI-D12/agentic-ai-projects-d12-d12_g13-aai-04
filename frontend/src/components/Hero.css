@@ -1,0 +1,96 @@
+.hero {
+  text-align: center;
+  padding: 5rem 0 2rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 100px;
+  padding: 0.35rem 1rem;
+  font-size: 0.78rem;
+  color: #93c5fd;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  font-family: var(--font-mono);
+}
+
+.badge-dot {
+  width: 6px; height: 6px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero-title {
+  font-family: var(--font-head);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-sub strong {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.hero-agents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.agent-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 14px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  text-align: left;
+  transition: border-color 0.2s;
+}
+
+.agent-pill.researcher { border-left: 2px solid #3b82f6; }
+.agent-pill.writer     { border-left: 2px solid #8b5cf6; }
+
+.pill-icon { font-size: 1.4rem; }
+.pill-name { font-size: 0.85rem; font-weight: 600; color: var(--text); font-family: var(--font-head); }
+.pill-desc { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
+
+.flow-arrow { color: #374151; }
+
+@media (max-width: 560px) {
+  .flow-arrow { transform: rotate(90deg); }
+  .hero-agents { flex-direction: column; }
+}
